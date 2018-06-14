@@ -5,6 +5,8 @@ using Android.OS;
 using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Views;
+using Android.Content;
+using Java.Interop;
 
 namespace Application
 {
@@ -48,6 +50,15 @@ namespace Application
             Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
                 .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
         }
-	}
+
+        [Export("btnClick")]
+        public void btnClick(View v)
+        {
+            var uri = Android.Net.Uri.Parse("https://google.com/");
+            var intent = new Intent(Intent.ActionView, uri);
+            StartActivity(intent);
+        }
+
+    }
 }
 
