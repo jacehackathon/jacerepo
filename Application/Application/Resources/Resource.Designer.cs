@@ -2435,9 +2435,6 @@ namespace Application
 			// aapt resource value: 0x7f08003d
 			public const int bottom = 2131230781;
 			
-			// aapt resource value: 0x7f08008d
-			public const int button = 2131230861;
-			
 			// aapt resource value: 0x7f080063
 			public const int buttonPanel = 2131230819;
 			
@@ -2857,6 +2854,9 @@ namespace Application
 			
 			// aapt resource value: 0x7f0800b0
 			public const int visible = 2131230896;
+			
+			// aapt resource value: 0x7f08008d
+			public const int webView1 = 2131230861;
 			
 			// aapt resource value: 0x7f08003c
 			public const int withText = 2131230780;
