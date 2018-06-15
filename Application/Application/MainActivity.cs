@@ -27,7 +27,15 @@ namespace Application
 			FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             fab.Click += FabOnClick;
 
-		}
+            WebView wv = (WebView)FindViewById(Resource.Id.webView1);
+            wv.SetWebViewClient(new WebViewClient());
+          
+            wv.Settings.JavaScriptEnabled = true;
+            //wv.LoadUrl("https://www.google.com:443/");
+
+
+            wv.LoadUrl("http://192.168.1.41:82/");
+        }
 
 		public override bool OnCreateOptionsMenu(IMenu menu)
         {
@@ -50,12 +58,15 @@ namespace Application
         {
             WebView wv = (WebView)FindViewById(Resource.Id.webView1);
             wv.SetWebViewClient(new WebViewClient());
+            
+            wv.Settings.JavaScriptEnabled = true;
             //wv.LoadUrl("https://www.google.com:443/");
             wv.LoadUrl("http://192.168.1.41:82/");
             //View view = (View) sender;
             //Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
             //    .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
         }
+
 
         [Export("OnClick")]
         public void OnClick(WebView v)
